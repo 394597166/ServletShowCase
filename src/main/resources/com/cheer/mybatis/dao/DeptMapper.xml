@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        <!--namespace对应的dao接口-->
+<mapper namespace="com.cheer.mybatis.dao.DeptMapper">
+    <!-- id是方法名 #{id}是方法参数 -->
+    <select id="getDept" resultType="dept">
+        select * from dept where deptno = #{deptno}
+    </select>
+    <select id="getDeptWithDname" resultType="dept">
+        select * from dept where dname like #{dname}
+    </select>
+    <select id="getDeptWithLoc" resultType="dept">
+        select * from dept where loc like #{loc}
+    </select>
+    <select id="getAllDept" resultType="dept">
+        select * from dept
+    </select>
+    <insert id="insertDept">
+        insert into dept values(#{deptno},#{dname},#{loc})
+    </insert>
+    <delete id="deleteDept">
+        delete from dept where deptno = #{deptno}
+    </delete>
+    <update id="updateDept">
+        update dept set dname = #{dname},loc = #{loc} where deptno = #{deptno}
+    </update>
+    <select id="rowCountDept" resultType="int">
+        select count(*) from dept
+    </select>
+</mapper>

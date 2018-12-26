@@ -1,0 +1,60 @@
+TRACE [main] 2018-12-25 19:12:46 (BaseJdbcLogger.java:165) <==    Columns: deptno, dname, loc
+TRACE [main] 2018-12-25 19:12:46 (BaseJdbcLogger.java:165) <==        Row: 10, ACCOUNTING, NEW YORK
+TRACE [main] 2018-12-25 19:13:34 (BaseJdbcLogger.java:165) <==    Columns: deptno, dname, loc
+TRACE [main] 2018-12-25 19:13:34 (BaseJdbcLogger.java:165) <==        Row: 10, ACCOUNTING, NEW YORK
+TRACE [main] 2018-12-25 19:13:42 (BaseJdbcLogger.java:165) <==    Columns: deptno, dname, loc
+TRACE [main] 2018-12-25 19:13:42 (BaseJdbcLogger.java:165) <==        Row: 10, ACCOUNTING, NEW YORK
+TRACE [main] 2018-12-25 19:14:02 (BaseJdbcLogger.java:165) <==    Columns: deptno, dname, loc
+TRACE [main] 2018-12-25 19:14:02 (BaseJdbcLogger.java:165) <==        Row: 10, ACCOUNTING, NEW YORK
+TRACE [main] 2018-12-25 19:14:23 (BaseJdbcLogger.java:165) <==    Columns: deptno, dname, loc
+TRACE [main] 2018-12-25 19:14:23 (BaseJdbcLogger.java:165) <==        Row: 10, ACCOUNTING, NEW YORK
+TRACE [main] 2018-12-25 19:16:27 (BaseJdbcLogger.java:165) <==    Columns: deptno, dname, loc
+TRACE [main] 2018-12-25 19:16:27 (BaseJdbcLogger.java:165) <==        Row: 10, ACCOUNTING, NEW YORK
+TRACE [main] 2018-12-25 19:16:50 (BaseJdbcLogger.java:165) <==    Columns: deptno, dname, loc
+TRACE [main] 2018-12-25 19:16:50 (BaseJdbcLogger.java:165) <==        Row: 10, ACCOUNTING, NEW YORK
+TRACE [main] 2018-12-25 19:17:05 (BaseJdbcLogger.java:165) <==    Columns: deptno, dname, loc
+TRACE [main] 2018-12-25 19:17:05 (BaseJdbcLogger.java:165) <==        Row: 10, ACCOUNTING, NEW YORK
+TRACE [main] 2018-12-25 19:17:47 (BaseJdbcLogger.java:165) <==    Columns: deptno, dname, loc
+TRACE [main] 2018-12-25 19:17:47 (BaseJdbcLogger.java:165) <==        Row: 10, ACCOUNTING, NEW YORK
+TRACE [main] 2018-12-25 19:19:20 (BaseJdbcLogger.java:165) <==    Columns: deptno, dname, loc
+TRACE [main] 2018-12-25 19:19:20 (BaseJdbcLogger.java:165) <==        Row: 10, ACCOUNTING, NEW YORK
+TRACE [main] 2018-12-25 19:19:53 (BaseJdbcLogger.java:165) <==    Columns: deptno, dname, loc
+TRACE [main] 2018-12-25 19:19:53 (BaseJdbcLogger.java:165) <==        Row: 10, ACCOUNTING, NEW YORK
+TRACE [main] 2018-12-25 19:20:33 (BaseJdbcLogger.java:165) <==    Columns: deptno, dname, loc
+TRACE [main] 2018-12-25 19:20:33 (BaseJdbcLogger.java:165) <==        Row: 10, ACCOUNTING, NEW YORK
+TRACE [main] 2018-12-25 19:20:46 (BaseJdbcLogger.java:165) <==    Columns: deptno, dname, loc
+TRACE [main] 2018-12-25 19:20:46 (BaseJdbcLogger.java:165) <==        Row: 10, ACCOUNTING, NEW YORK
+TRACE [main] 2018-12-25 19:21:05 (BaseJdbcLogger.java:165) <==    Columns: deptno, dname, loc
+TRACE [main] 2018-12-25 19:21:05 (BaseJdbcLogger.java:165) <==        Row: 10, ACCOUNTING, NEW YORK
+TRACE [main] 2018-12-25 19:21:16 (BaseJdbcLogger.java:165) <==    Columns: deptno, dname, loc
+TRACE [main] 2018-12-25 19:21:16 (BaseJdbcLogger.java:165) <==        Row: 10, ACCOUNTING, NEW YORK
+TRACE [main] 2018-12-25 19:23:34 (BaseJdbcLogger.java:165) <==    Columns: deptno, dname, loc
+TRACE [main] 2018-12-25 19:23:34 (BaseJdbcLogger.java:165) <==        Row: 10, ACCOUNTING, NEW YORK
+TRACE [main] 2018-12-25 19:23:34 (BaseJdbcLogger.java:165) <==        Row: 20, RESEARCH, DALLAS
+TRACE [main] 2018-12-25 19:23:34 (BaseJdbcLogger.java:165) <==        Row: 30, SALES, CHICAGO
+TRACE [main] 2018-12-25 19:23:34 (BaseJdbcLogger.java:165) <==        Row: 40, OPERATIONS, BOSTON
+TRACE [main] 2018-12-25 19:23:34 (BaseJdbcLogger.java:165) <==        Row: 50, beijing, 中国江苏
+TRACE [main] 2018-12-25 19:33:03 (BaseJdbcLogger.java:165) <==    Columns: count(*)
+TRACE [main] 2018-12-25 19:33:03 (BaseJdbcLogger.java:165) <==        Row: 6
+TRACE [main] 2018-12-25 19:38:40 (BaseJdbcLogger.java:165) <==    Columns: empno, ename, job, mgr, hiredate, sal, com, deptno
+TRACE [main] 2018-12-25 19:38:40 (BaseJdbcLogger.java:165) <==        Row: 8000, 徐亮, IT, 7499, 2018-11-16, 5000.00, 1200.00, 40
+TRACE [main] 2018-12-25 19:48:41 (BaseJdbcLogger.java:165) <==    Columns: empno, ename, job, mgr, hiredate, sal, com, deptno
+TRACE [main] 2018-12-25 19:48:41 (BaseJdbcLogger.java:165) <==        Row: 7369, SMITH, CLERK, 7902, 1980-12-17, 800.00, null, 20
+TRACE [main] 2018-12-25 19:48:41 (BaseJdbcLogger.java:165) <==        Row: 7499, ALLEN, SALESMAN, 7698, 1981-02-20, 1600.00, 300.00, 30
+TRACE [main] 2018-12-25 19:48:41 (BaseJdbcLogger.java:165) <==        Row: 7521, WARD, SALESMAN, 7698, 1981-02-22, 1250.00, 500.00, 30
+TRACE [main] 2018-12-25 19:48:41 (BaseJdbcLogger.java:165) <==        Row: 7566, JONES, MANAGER, 7839, 1981-04-02, 2975.00, null, 20
+TRACE [main] 2018-12-25 19:48:41 (BaseJdbcLogger.java:165) <==        Row: 7654, MARTIN, SALESMAN, 7698, 1981-09-28, 1250.00, 1400.00, 30
+TRACE [main] 2018-12-25 19:48:41 (BaseJdbcLogger.java:165) <==        Row: 7698, BLAKE, MANAGER, 7839, 1981-05-01, 2850.00, null, 30
+TRACE [main] 2018-12-25 19:48:41 (BaseJdbcLogger.java:165) <==        Row: 7782, CLARK, MANAGER, 7839, 1981-06-09, 2450.00, null, 10
+TRACE [main] 2018-12-25 19:48:41 (BaseJdbcLogger.java:165) <==        Row: 7788, SCOTT, ANALYST, 7566, 1987-07-13, 3000.00, null, 20
+TRACE [main] 2018-12-25 19:48:41 (BaseJdbcLogger.java:165) <==        Row: 7839, KING, PRESIDENT, null, 1981-11-17, 5000.00, null, 10
+TRACE [main] 2018-12-25 19:48:41 (BaseJdbcLogger.java:165) <==        Row: 7844, TURNER, SALESMAN, 7698, 1981-09-08, 1500.00, 0.00, 30
+TRACE [main] 2018-12-25 19:48:41 (BaseJdbcLogger.java:165) <==        Row: 7876, ADAMS, CLERK, 7788, 1987-07-13, 1100.00, null, 20
+TRACE [main] 2018-12-25 19:48:41 (BaseJdbcLogger.java:165) <==        Row: 7900, JAMES, CLERK, 7698, 1981-12-03, 1950.00, null, 30
+TRACE [main] 2018-12-25 19:48:41 (BaseJdbcLogger.java:165) <==        Row: 7902, FORD, ANALYST, 7566, 1981-12-13, 3000.00, null, 20
+TRACE [main] 2018-12-25 19:48:41 (BaseJdbcLogger.java:165) <==        Row: 7904, xuliang, CLERK, 7902, 2018-11-12, 6000.00, 0.00, 40
+TRACE [main] 2018-12-25 19:48:41 (BaseJdbcLogger.java:165) <==        Row: 7906, 陈公公, CLERK, 7902, 2018-11-13, 1500.00, 211.00, 10
+TRACE [main] 2018-12-25 19:48:41 (BaseJdbcLogger.java:165) <==        Row: 7934, MILLER, CLERK, 7782, 1982-01-23, 1300.00, null, 10
+TRACE [main] 2018-12-25 19:48:41 (BaseJdbcLogger.java:165) <==        Row: 8000, 徐亮, IT, 7499, 2018-11-16, 5000.00, 1200.00, 40
+TRACE [main] 2018-12-25 19:53:42 (BaseJdbcLogger.java:165) <==    Columns: count(*)
+TRACE [main] 2018-12-25 19:53:42 (BaseJdbcLogger.java:165) <==        Row: 18

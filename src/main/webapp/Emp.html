@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>emp</title>
+    <style type="text/css">
+        div{
+            margin: 0 auto;
+            width: 800px;
+        }
+        table{
+            margin: 0 auto;
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+<button id="dept">查看所有员工信息</button>
+<div>
+    <table border="1px">
+        <tr><td width="70px">员工编号</td><td width="70px">员工姓名</td><td width="100px">工作内容</td><td width="80px">经理编号</td><td width="100px">入职日期</td><td width="80px">工资</td><td width="80px">奖金</td><td width="40px">部门</td><td width="50px">操作</td></tr>
+    </table>
+    <table id="table" border="1px">
+
+    </table>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        var $dept = $("#dept");
+        var $table = $("#table");
+        $dept.on("click",function () {
+            $table.empty();
+            $.ajax({
+                url:"http://localhost:8080/servlet/getAllEmpServlet",
+                success: function (result) {
+                    $.each(result, function (index, value) {
+                        var $tr = $("<tr></tr>");
+                        var $tdempno = $("<td>"+value.empno+"</td>");
+                        $tdempno.css("width","70px");
+                        var $tdename = $("<td>"+value.ename+"</td>");
+                        $tdename.css("width","70px");
+                        var $tdjob = $("<td>"+value.job+"</td>");
+                        $tdjob.css("width","100px");
+                        var $tdmgr = $("<td>"+value.mgr+"</td>");
+                        $tdmgr.css("width","80px");
+                        var $tdhiredate = $("<td>"+value.hiredate+"</td>");
+                        $tdhiredate.css("width","100px");
+                        var $tdsal = $("<td>"+value.sal+"</td>");
+                        $tdsal.css("width","80px");
+                        var $tdcom = $("<td>"+value.com+"</td>");
+                        $tdcom.css("width","80px");
+                        var $tddeptno = $("<td>"+value.deptno+"</td>");
+                        $tddeptno.css("width","40px");
+                        var $tddelete = $("<td></td>");
+                        $tddelete.text("delete");
+                        $tddelete.css("width","50px");
+                        $tr.append($tdempno,$tdename,$tdjob,$tdmgr,$tdhiredate,$tdsal,$tdcom,$tddeptno,$tddelete);
+                        $table.append($tr);
+                    });
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>

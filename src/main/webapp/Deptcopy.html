@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dept</title>
+    <style type="text/css">
+        .div{
+            margin: 0 auto;
+            width: 550px;
+        }
+        table{
+            margin: 0 auto;
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+<button id="dept">查看所有部门信息</button>
+<div>
+    <select id="select1">
+        <option value="0" selected="selected">部门编号</option>
+        <option value="1">部门名称</option>
+        <option value="2">部门地址</option>
+    </select>
+    <select id="select2" >
+        <option value="3">等于</option>
+    </select>
+    <input type="text" id="info">
+    <button id="select">通过条件查询</button>
+</div>
+<div class="div">
+    <table border="1px">
+        <tr><td width="100px">部门编号</td><td width="200px">部门名称</td><td width="200px">部门地址</td><td width="50px">操作</td></tr>
+    </table>
+    <table id="table" border="1px">
+
+    </table>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        var $dept = $("#dept");
+        var $table = $("#table");
+        var $select = $("#select");
+        var $select1 = $("#select1");
+        var $select2 = $("#select2");
+        $dept.on("click",function () {
+            info("http://localhost:8080/servlet/getAllDeptServlet");
+        });
+        $select1.on("change",function () {
+                var $option1 = $("<option></option>");
+                $select2.empty();
+                $option1.val("4");
+                $option1.text("等于");
+                $select2.name = "true";
+                $select2.append($option1);
+        });
+        $select.on("click",function () {
+            var $info = $("#info");
+            if ($info.val() == ""){
+                alert("输入错误!");
+                return false;
+            }else{
+                if ($select1.val()==0){
+                    $table.empty();
+                    var deptno = $info.val();
+                    $.ajax({
+                        url:"http://localhost:8080/servlet/getDeptWithDeptnoServlet",
+                        dataType:"json",
+                        data:{"deptno":deptno},
+                        method:"POST",
+                        success: function (result) {
+                            var $tr = $("<tr></tr>");
+                            var $tddeptno = $("<td>"+result.deptno+"</td>");
+                            $tddeptno.css("width","100px");
+                            var $tddname = $("<td>"+result.dname+"</td>");
+                            $tddname.css("width","200px");
+                            var $tdloc = $("<td>"+result.loc+"</td>");
+                            $tdloc.css("width","200px");
+                            var $tddelete = $("<td></td>");
+                            $tddelete.text("delete");
+                            $tddelete.css("width","50px");
+                            $tddelete.on("click",function () {
+                                if (confirm("确定删除吗？")){
+                                    var deptno = $tddeptno.text();
+                                    $(this).parent().remove();
+                                    $.ajax({
+                                        url:"http://localhost:8080/servlet/deleteDeptWithDeptnoServlet",
+                                        dataType:"json",
+                                        data:{"deptno":deptno},
+                                        method:"POST",
+                                        success: function (result) {
+                                        }
+                                    });
+                                } else{
+                                    return false;
+                                }
+                            });
+                            $tr.append($tddeptno,$tddname,$tdloc,$tddelete);
+                            $table.append($tr);
+                        }
+                    });
+                } else if ($select1.val()==1) {
+                    $table.empty();
+                    var dname = $info.val();
+                    $.ajax({
+                        url:"http://localhost:8080/servlet/getDeptWithDnameServlet",
+                        dataType:"json",
+                        data:{"dname":dname},
+                        method:"POST",
+                        success: function (result) {
+                            $.each(result, function (index, value) {
+                                var $tr = $("<tr></tr>");
+                                var $tddeptno = $("<td>"+value.deptno+"</td>");
+                                $tddeptno.css("width","100px");
+                                var $tddname = $("<td>"+value.dname+"</td>");
+                                $tddname.css("width","200px");
+                                var $tdloc = $("<td>"+value.loc+"</td>");
+                                $tdloc.css("width","200px");
+                                var $tddelete = $("<td></td>");
+                                $tddelete.text("delete");
+                                $tddelete.css("width","50px");
+                                $tddelete.on("click",function () {
+                                    if (confirm("确定删除吗？")){
+                                        var deptno = $tddeptno.text();
+                                        $(this).parent().remove();
+                                        $.ajax({
+                                            url:"http://localhost:8080/servlet/deleteDeptWithDeptnoServlet",
+                                            dataType:"json",
+                                            data:{"deptno":deptno},
+                                            method:"POST",
+                                            success: function (result) {
+                                            }
+                                        });
+                                    } else{
+                                        return false;
+                                    }
+                                });
+                                $tr.append($tddeptno,$tddname,$tdloc,$tddelete);
+                                $table.append($tr);
+                            });
+                        }
+                    });
+                }else{
+                    $table.empty();
+                    var loc = $info.val();
+                    $.ajax({
+                        url:"http://localhost:8080/servlet/getDeptWithLocServlet",
+                        dataType:"json",
+                        data:{"loc":loc},
+                        method:"POST",
+                        success: function (result) {
+                            $.each(result, function (index, value) {
+                                var $tr = $("<tr></tr>");
+                                var $tddeptno = $("<td>"+value.deptno+"</td>");
+                                $tddeptno.css("width","100px");
+                                var $tddname = $("<td>"+value.dname+"</td>");
+                                $tddname.css("width","200px");
+                                var $tdloc = $("<td>"+value.loc+"</td>");
+                                $tdloc.css("width","200px");
+                                var $tddelete = $("<td></td>");
+                                $tddelete.text("delete");
+                                $tddelete.css("width","50px");
+                                $tddelete.on("click",function () {
+                                    if (confirm("确定删除吗？")){
+                                        var deptno = $tddeptno.text();
+                                        $(this).parent().remove();
+                                        $.ajax({
+                                            url:"http://localhost:8080/servlet/deleteDeptWithDeptnoServlet",
+                                            dataType:"json",
+                                            data:{"deptno":deptno},
+                                            method:"POST",
+                                            success: function (result) {
+                                            }
+                                        });
+                                    } else{
+                                        return false;
+                                    }
+                                });
+                                $tr.append($tddeptno,$tddname,$tdloc,$tddelete);
+                                $table.append($tr);
+                            });
+                        }
+                    });
+                }
+            }
+        });
+        function info(url) {
+            $table.empty();
+            $.ajax({
+                url:url,
+                method:"POST",
+                dataType:"json",
+                success: function (result) {
+                    $.each(result, function (index, value) {
+                        var $tr = $("<tr></tr>");
+                        var $tddeptno = $("<td>"+value.deptno+"</td>");
+                        $tddeptno.css("width","100px");
+                        var $tddname = $("<td>"+value.dname+"</td>");
+                        $tddname.css("width","200px");
+                        var $tdloc = $("<td>"+value.loc+"</td>");
+                        $tdloc.css("width","200px");
+                        var $tddelete = $("<td></td>");
+                        $tddelete.text("delete");
+                        $tddelete.css("width","50px");
+                        $tddelete.on("click",function () {
+                            if (confirm("确定删除吗？")){
+                                var deptno = $tddeptno.text();
+                                $(this).parent().remove();
+                                $.ajax({
+                                    url:"http://localhost:8080/servlet/deleteDeptWithDeptnoServlet",
+                                    dataType:"json",
+                                    data:{"deptno":deptno},
+                                    method:"POST",
+                                    success: function (result) {
+                                    }
+                                });
+                            } else{
+                                return false;
+                            }
+                        });
+                        $tr.append($tddeptno,$tddname,$tdloc,$tddelete);
+                        $table.append($tr);
+                    });
+                }
+            });
+        }
+    });
+</script>
+</body>
+</html>
